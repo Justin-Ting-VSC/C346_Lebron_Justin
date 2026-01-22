@@ -20,10 +20,10 @@ app.use(express.json());
 app.listen(port, () => {console.log('Server running on port' , port);
 });
 
-app.get('/allcontact', (req, res) => {
+app.get('/alllebrons', (req, res) => {
     try {
         let connection = await mysql.createConnection(dbConfig);
-        const[rows] = await connection.query('SELECT * FROM defaultdb.contact');
+        const[rows] = await connection.query('SELECT * FROM defaultdb.lebrons');
         res.send(rows);
     } catch(err) {
         console.log(err);
